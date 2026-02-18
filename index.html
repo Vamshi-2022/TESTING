@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthScore Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles_responsive.css">
+    <link rel="stylesheet" href="styles_modal.css">
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <header class="top-nav">
+        <div class="logo-container">
+            <div class="logo-icon">
+                <img src="images/logo.png" alt="HealthScore Logo">
+            </div>
+            <div class="logo-text">
+                <h1>HealthScore</h1>
+                <span>Your Wellness companion</span>
+            </div>
+        </div>
+        <nav class="main-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Career</a>
+            <a href="#">Provider network</a>
+            <a href="#">Membership <i class="fa-solid fa-chevron-down"></i></a>
+            <a href="#">About</a>
+        </nav>
+        <button class="login-btn">Login</button>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="active">
+                    <img src="images/01.png" alt="Remarks / Suggestions" height="30px" width="30px">
+                    <span>Personal Details</span>
+                </li>
+                <li>
+                    <img src="images/02.png" alt="Remarks / Suggestions" height="30px" width="30px">
+                    <span>Physical Health</span>
+                </li>
+                <li>
+                    <img src="images/03.png" alt="Remarks / Suggestions" height="30px" width="30px">
+                    <span>Medical History</span>
+                </li>
+                <li>
+                    <img src="images/04.png" alt="Remarks / Suggestions" height="30px" width="30px">
+                    <span>Diet & Hydration</span>
+                </li>
+                <li>
+                    <img src="images/05.png" alt="Remarks / Suggestions" height="30px" width="30px">
+                    <span>Lifestyle & Daily Activities</span>
+                </li>
+                <li>
+                    <img src="images/06.png" alt="Remarks / Suggestions" height="30px" width="30px">
+                    <span>Remarks / Suggestions</span>
+                </li>
+            </ul>
+
+            <div class="sidebar-progress">
+                <p>Complete all categories to get your full health assessment!</p>
+                <div class="progress-circle">
+                    <svg viewBox="0 0 36 36" class="circular-chart">
+                        <path class="circle-bg" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <path class="circle" stroke-dasharray="0, 100" d="M18 2.0845
+                            a 15.9155 15.9155 0 0 1 0 31.831
+                            a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        <text x="18" y="20.35" class="percentage">0%</text>
+                        <text x="18" y="26" class="percentage-sub">0/6 categories Filled</text>
+                    </svg>
+                </div>
+                <button class="start-filling-btn">Start Filling <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="settings-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Personal Details</h2>
+                <p>Help us assess your health by sharing basic personal information</p>
+            </div>
+
+            <div class="cards-list">
+                <!-- Card 1 -->
+                <div class="info-card">
+                    <div class="card-left">
+                        <div class="card-icon blue-icon">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div class="card-text">
+                            <h3>Personal Details</h3>
+                            <p>Basic information about yours</p>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-meta">
+                            <span class="badge">One time</span>
+                            <span class="percentage-text">80%</span>
+                        </div>
+                        <button id="personal-details-btn" class="fill-details-btn">Fill Details</button>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="info-card">
+                    <div class="card-left">
+                        <div class="card-icon blue-icon">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <div class="card-text">
+                            <h3>Family Details</h3>
+                            <p>Basic information about your Family</p>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-meta">
+                            <span class="badge">One time</span>
+                            <span class="percentage-text">50%</span>
+                        </div>
+                        <button id="family-details-btn" class="fill-details-btn">Fill Details</button>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="info-card">
+                    <div class="card-left">
+                        <div class="card-icon blue-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="card-text">
+                            <h3>Address</h3>
+                            <p>Basic information about your Location</p>
+                        </div>
+                    </div>
+                    <div class="card-right">
+                        <div class="card-meta">
+                            <span class="percentage-text">10%</span>
+                        </div>
+                        <button id="address-details-btn" class="fill-details-btn">Fill Details</button>
+                    </div>
+                </div>
+
+                <!-- Score Card -->
+                <div class="score-card">
+                    <div class="score-badge">One time</div>
+                    <div class="score-content">
+                        <div class="score-left">
+                            <div class="score-circle-icon">
+                                <img src="images/PersonalScoreLogo.png" alt="Personal Score" height="55px" width="55px">
+                            </div>
+                            <div class="score-text">
+                                <h3>Personal Score</h3>
+                                <p class="score-value">42 <span class="score-total">/ 100</span></p>
+                            </div>
+                            <p class="score-desc">Your personal score is based on your health. Continue filling in your
+                                details to achieve a higher score.</p>
+                        </div>
+                        <div class="score-right">
+                            <div class="chart-visual">
+                                <img src="images/PersonalScoreGraph.png" alt="Health Score Graph"
+                                    class="chart-img-full">
+
+                            </div>
+                       </div>
+                    </div>
+                    <button class="fill-details-btn full-width">Fill Details</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Right Panel -->
+        <aside class="right-panel">
+            
+        </aside>
+    </div>
+    <!-- Personal Details Modal -->
+    <div id="personal-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <div class="modal-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div>
+                        <h2>Personal Details</h2>
+                        <p>Complete your basic profile information</p>
+                    </div>
+                </div>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            
+            <form class="modal-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name*:</label>
+                        <input type="text" placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <div class="options-group">
+                            <button type="button" class="option-btn active"><i class="fa-solid fa-person"></i> male</button>
+                            <button type="button" class="option-btn"><i class="fa-solid fa-person-dress"></i> Female</button>
+                            <button type="button" class="option-btn">Other</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Occupation:</label>
+                        <input type="text" placeholder="Enter your occupation">
+                    </div>
+                    <div class="form-group">
+                        <label>Work Type:</label>
+                        <div class="options-group">
+                            <button type="button" class="option-btn active">Desk</button>
+                            <button type="button" class="option-btn">Field</button>
+                            <button type="button" class="option-btn">mixed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date of Birth:</label>
+                        <div class="date-input-wrapper">
+                            <input type="text" placeholder="dd/mm/yyyy" onfocus="(this.type='date')" onblur="(this.type='text')">
+                            <i class="fa-regular fa-calendar"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Education details:</label>
+                        <input type="text" placeholder="Highest qualification">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Awards & Achivements:</label>
+                        <input type="text" placeholder="Enter your Awards or achivements">
+                    </div>
+                    <div class="form-group">
+                        <label>Organization Name:</label>
+                        <input type="text" placeholder="Company / institute name">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="save-modal-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Family Details Modal -->
+    <div id="family-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <div class="modal-icon">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <div>
+                        <h2>Family Details</h2>
+                        <p>please provide your family Id to retrieve existing detailes. If not available, you can add details manually.</p>
+                    </div>
+                </div>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            
+            <form class="modal-form" id="family-form-initial">
+                <div class="modal-divider"></div>
+                
+                <div class="radio-options">
+                    <div class="radio-item-container">
+                        <label class="radio-label">
+                            <input type="radio" name="family-id-check" class="radio-hidden" checked>
+                            <span class="radio-custom"></span>
+                            I Have Family ID
+                        </label>
+                        <div class="family-input-container">
+                            <input type="text" class="family-input" placeholder="Enter Family ID Number">
+                        </div>
+                    </div>
+                    
+                    <div class="radio-item-container">
+                        <label class="radio-label">
+                            <input type="radio" name="family-id-check" class="radio-hidden">
+                            <span class="radio-custom"></span>
+                            I Don't Have Family ID
+                        </label>
+                    </div>
+                </div>
+
+                <div class="modal-divider"></div>
+
+                <div>
+                    <button type="button" class="add-manual-btn" id="show-manual-form-btn">
+                        <i class="fa-solid fa-plus"></i> ADD Family Details manually
+                    </button>
+                </div>
+            </form>
+
+            <!-- Manual Family Details Form (Hidden initially) -->
+            <form class="modal-form" id="family-form-manual" style="display: none;">
+                <div class="modal-divider"></div>
+                
+                <div class="manual-details-section">
+                    <div class="details-row">
+                        <label>Father Details:</label>
+                        <button type="button" class="add-details-btn">
+                            <i class="fa-solid fa-circle-plus"></i> Add details
+                        </button>
+                    </div>
+                    
+                    <div class="details-row">
+                        <label>Mother Details:</label>
+                        <button type="button" class="add-details-btn">
+                            <i class="fa-solid fa-circle-plus"></i> Add details
+                        </button>
+                    </div>
+
+                    <div class="details-row">
+                        <label>Sibling Details:</label>
+                        <button type="button" class="add-details-btn">
+                            <i class="fa-solid fa-circle-plus"></i> Add details
+                        </button>
+                    </div>
+
+                    <div class="member-count-row">
+                        <label style="font-weight: 600; font-size: 14px; color: #333;">Total Family members:</label>
+                        <input type="number" class="member-count-input" value="1">
+                    </div>
+
+                    <div class="details-row">
+                        <label>Rasidencial status:</label>
+                        <button type="button" class="add-details-btn">
+                            <i class="fa-solid fa-circle-plus"></i> Add details
+                        </button>
+                    </div>
+                </div>
+
+                <div class="info-bar-black">
+                    current Address, Type of residence, Length of Stay, residential, Length of Stay, Same as permanent address
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Address Details Modal -->
+    <div id="address-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-header-left">
+                    <div class="modal-icon">
+                        <img src="images/icon-address.png" alt="" style="width: 28px; height: 28px; object-fit: contain;">
+                    </div>
+                    <div>
+                        <h2>Contact & Location</h2>
+                        <p>Provide your contact details for communication</p>
+                    </div>
+                </div>
+                <button class="close-modal-btn">&times;</button>
+            </div>
+            
+            <form class="modal-form">
+                <div class="modal-divider"></div>
+                
+                <div class="form-group">
+                    <label>Country:</label>
+                    <div class="select-container">
+                        <div class="custom-select">
+                            <div class="custom-select-content">
+                                <i class="fa-solid fa-earth-americas select-icon"></i>
+                                <span>Select your country</span>
+                            </div>
+                            <i class="fa-solid fa-chevron-down select-arrow"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Contact No. :</label>
+                        <div class="phone-group">
+                            <button type="button" class="country-code-btn">
+                                <img src="images/flag-india.png" class="flag-icon" alt="IN">
+                                <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i>
+                            </button>
+                            <input type="tel" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>City / Village :</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email Address:</label>
+                        <div class="email-input-wrapper">
+                            <i class="fa-regular fa-envelope"></i>
+                            <input type="email" placeholder="abc1234@gmail.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Pincode :</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>State :</label>
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>District :</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Address*</label>
+                        <input type="text" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label>Landmark:</label>
+                        <input type="text" placeholder="">
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="save-modal-btn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // General function to open modal
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                // Reset family modal state if opening it
+                if(modalId === 'family-modal') {
+                    document.getElementById('family-form-initial').style.display = 'flex';
+                    document.getElementById('family-form-manual').style.display = 'none';
+                    // Reset text
+                    const familyTitle = modal.querySelector('.modal-header-left p');
+                    if(familyTitle) familyTitle.textContent = "please provide your family Id to retrieve existing detailes. If not available, you can add details manually.";
+                }
+                
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.classList.add('show');
+                }, 10);
+            }
+
+            // General function to close modal
+            function closeModal(modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            }
+
+            // Setup modal listeners
+            function setupModal(modalId, openBtnId) {
+                const modal = document.getElementById(modalId);
+                const openBtn = document.getElementById(openBtnId);
+                const closeBtns = modal.querySelectorAll('.close-modal-btn, .save-modal-btn'); 
+
+                if (openBtn) {
+                    openBtn.addEventListener('click', () => openModal(modalId));
+                }
+
+                closeBtns.forEach(btn => {
+                    btn.addEventListener('click', () => closeModal(modal));
+                });
+
+                // Close on outside click
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeModal(modal);
+                    }
+                });
+            }
+
+            // Initialize modals
+            setupModal('personal-modal', 'personal-details-btn');
+            setupModal('family-modal', 'family-details-btn');
+            setupModal('address-modal', 'address-details-btn');
+
+            // Handle Manual Form Toggle
+            const showManualBtn = document.getElementById('show-manual-form-btn');
+            if(showManualBtn) {
+                showManualBtn.addEventListener('click', function() {
+                    document.getElementById('family-form-initial').style.display = 'none';
+                    document.getElementById('family-form-manual').style.display = 'flex';
+                    
+                    // Update header text
+                    const modal = document.getElementById('family-modal');
+                    const familyTitle = modal.querySelector('.modal-header-left p');
+                    if(familyTitle) {
+                        familyTitle.textContent = "Complate your Family Details information";
+                    }
+                });
+            }
+
+            // Handle option buttons selection for personal modal
+            const optionBtns = document.querySelectorAll('.option-btn');
+            optionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const group = this.parentElement;
+                    const siblings = group.querySelectorAll('.option-btn');
+                    siblings.forEach(sib => sib.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
